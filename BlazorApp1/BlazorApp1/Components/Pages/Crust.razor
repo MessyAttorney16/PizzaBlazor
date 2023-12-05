@@ -20,19 +20,20 @@
 <ul>
     @if (pizza.PizzaCrust.thinCrust)
     {
-        <li>Thin Crust</li>
+        <li>Thin Crust - $5.99</li>
     }
     @if (pizza.PizzaCrust.panCrust)
     {
-        <li>Pan Crust</li>
+        <li>Pan Crust - $7.99</li>
     }
     @if (pizza.PizzaCrust.handTossed)
     {
-        <li>Hand Tossed</li>
+        <li>Hand Tossed - $6.99</li>
     }
 </ul>
 
 
 @code {
-    Pizza pizza = new Pizza();
+    [Parameter]
+    public Pizza pizza { get; set; }
 }

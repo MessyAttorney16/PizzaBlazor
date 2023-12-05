@@ -15,10 +15,8 @@
 
         public double GetTotalPrice()
         {
-            double totalPrice = 0;
-            double totalTip = 0;
-            totalTip = (PizzaToppings.Price() + PizzaCrust.Price() + 2.00) * Tip.Tip();
-            totalPrice = PizzaToppings.Price() + PizzaCrust.Price() + 2.00 + totalTip;
+            double totalTip = (PizzaToppings.tPrice() + PizzaCrust.cPrice() + 2.00) * Tip.Tip();
+            double totalPrice = PizzaToppings.tPrice() + PizzaCrust.cPrice() + 2.00 + totalTip;
             return totalPrice;
         }
     }
@@ -30,7 +28,7 @@
         public bool ham { get; set; }
         public bool chicken { get; set; }
 
-        public double Price()
+        public double tPrice()
         {
             double toppingTotal = 0;
             if (pepperoni)
@@ -59,7 +57,7 @@
         public bool panCrust { get; set; }
         public bool handTossed { get; set; }
 
-        public double Price()
+        public double cPrice()
         {
             double crustTotal = 0;
             if (thinCrust)

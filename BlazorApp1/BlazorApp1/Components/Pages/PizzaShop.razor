@@ -4,12 +4,12 @@
 <h1>PizzaShop</h1>
 
 <h2>Select a Crust</h2>
-<Crust></Crust>
+<Crust pizza="pizza"></Crust>
 
 <br />
 
 <h2>Select Toppings</h2>
-<Topping></Topping>
+<Topping pizza="pizza"></Topping>
 
 <br />
 
@@ -48,14 +48,20 @@
     }
 </ul>
 
-<button type="button" onclick="@pizza.GetTotalPrice()">Get Total Price</button>
+<button type="button" onclick="@GetPrice">Get Total Price</button>
 
-<p>Total: $@pizza.GetTotalPrice()</p>
+<p>Total: $@price</p>
 
 
 @code {
     Pizza pizza = new Pizza();
 
+    
+    double price;
 
+    private void GetPrice()
+    {
+        price = pizza.GetTotalPrice();
+    }
 
 }
