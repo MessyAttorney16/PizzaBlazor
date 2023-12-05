@@ -1,0 +1,56 @@
+﻿@page "/pizzashop"
+@rendermode InteractiveServer
+
+<h1>PizzaShop</h1>
+
+<h2>Select a Crust</h2>
+<Crust></Crust>
+
+<br />
+
+<h2>Select Toppings</h2>
+<Topping></Topping>
+
+<br />
+
+<h2>Select Tip</h2>
+
+<p>Tip Amount:</p>
+
+<label>
+    <input type="checkbox" @bind='pizza.Tip.tip1' />
+    12%
+</label>
+
+<label>
+    <input type="checkbox" @bind='pizza.Tip.tip2' />
+    15%
+</label>
+
+<label>
+    <input type="checkbox" @bind='pizza.Tip.tip3' />
+    18%
+</label>
+
+<p>Selected Tip:</p>
+<ul>
+    @if (pizza.Tip.tip1)
+    {
+        <li>12%</li>
+    }
+    @if (pizza.Tip.tip2)
+    {
+        <li>15%</li>
+    }
+    @if (pizza.Tip.tip3)
+    {
+        <li>18%</li>
+    }
+</ul>
+
+<h3>Total Price:</h3>
+<p>$@pizza.GetTotalPrice()</p>
+
+@code {
+	Pizza pizza = new Pizza();
+}

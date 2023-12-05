@@ -1,0 +1,38 @@
+﻿@page "/crust"
+@rendermode InteractiveServer
+
+<label>
+    <input type="checkbox" @bind='pizza.PizzaCrust.thinCrust' />
+    Thin Crust
+</label>
+
+<label>
+    <input type="checkbox" @bind='pizza.PizzaCrust.panCrust' />
+    Pan Crust
+</label>
+
+<label>
+    <input type="checkbox" @bind='pizza.PizzaCrust.handTossed' />
+    Hand Tossed
+</label>
+
+<p>Selected Crust:</p>
+<ul>
+    @if (pizza.PizzaCrust.thinCrust)
+    {
+        <li>Thin Crust</li>  
+    }
+    @if (pizza.PizzaCrust.panCrust)
+    {
+        <li>Pan Crust</li>  
+    }
+    @if (pizza.PizzaCrust.handTossed)
+    {
+        <li>Hand Tossed</li>  
+    }
+</ul>
+
+
+@code {
+    Pizza pizza = new Pizza();
+}
