@@ -48,9 +48,14 @@
     }
 </ul>
 
-<h3>Total Price:</h3>
-<p>$@pizza.GetTotalPrice()</p>
+<button type="button" onclick="@pizza.GetTotalPrice()">Get Total Price</button>
+
+<p>Total: $@pizza.GetTotalPrice()</p>
+
 
 @code {
-	Pizza pizza = new Pizza();
+    Pizza pizza = new Pizza();
+
+
+
 }
